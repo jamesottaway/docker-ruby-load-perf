@@ -43,3 +43,34 @@ time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm r
 time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rails test
 time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rails test
 ```
+
+## Results
+
+All results are averaged across three attempts.
+
+### Docker for Mac
+
+Hardware: Early 2015 13-inch Retina MacBook Pro, 3.1 GHz i7 CPU, 16 GB RAM
+
+| | bin/rake environment | bin/rails test |
+| --- | --- | --- |
+| **Build** | 4.162 sec | 2.711 sec |
+| **Image** | 39.335 sec | 14.420 sec |
+
+### Dinghy in VirtualBox
+
+Hardware: Early 2015 13-inch Retina MacBook Pro, 3.1 GHz i7 CPU, 16 GB RAM
+
+| | bin/rake environment | bin/rails test |
+| --- | --- | --- |
+| **Build** | 2.001 sec | 1.198 sec |
+| **Image** | 3.625 sec | 1.302 sec |
+
+### Docker on Ubuntu 16.04
+
+Hardware: Intel NUC, 1.8 GHz i5 6260U, 8 GB RAM
+
+| | bin/rake environment | bin/rails test |
+| --- | --- | --- |
+| **Build** | 1.902 sec | 1.237 sec |
+| **Image** | 1.772 sec | 1.176 sec |
