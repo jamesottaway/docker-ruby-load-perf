@@ -74,3 +74,9 @@ Hardware: Intel NUC, 1.8 GHz i5 6260U, 8 GB RAM
 | --- | --- | --- |
 | **Build** | 1.902 sec | 1.237 sec |
 | **Image** | 1.772 sec | 1.176 sec |
+
+## Contributing
+
+Please open an issue and leave your own benchmark results.
+
+Send a PR if you feel like you can improve the benchmark.
