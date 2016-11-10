@@ -38,10 +38,10 @@ You can opt-in to the 'bake-gems-into-an-image' or 'mount-gems-in-a-volume' appr
 This gives us four commands necessary to run the benchmark:
 
 ```
-time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rake environment
-time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rake environment
-time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rails test
-time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rails test
+time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rake environment > /dev/null
+time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rake environment > /dev/null
+time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rails test > /dev/null
+time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rails test > /dev/null
 ```
 
 ## Results
