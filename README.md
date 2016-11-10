@@ -25,23 +25,23 @@ The result is that we've saved heaps of time when we need to run `bundle install
 ## Bootstrap
 
 ```
-docker-compose -f docker-compose.yml -f docker-compose.build.yml build
-docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bundle install
+docker-compose -f compose.yml -f docker.build.yml build
+docker-compose -f compose.yml -f docker.image.yml run --rm rails bundle install
 ```
 
 ## Benchmark:
 
 `bin/rake environment` can be used to load the Rails app and `bin/rails test` invokes Minitest, although there are no tests to run.
 
-You can opt-in to the 'bake-gems-into-an-image' or 'mount-gems-in-a-volume' approaches by loading `docker-compose.build.yml` and `docker-compose.image.yml` respectively.
+You can opt-in to the 'bake-gems-into-an-image' or 'mount-gems-in-a-volume' approaches by loading `docker.build.yml` and `docker.image.yml` respectively.
 
 This gives us four commands necessary to run the benchmark:
 
 ```
-time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rake environment > /dev/null
-time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rake environment > /dev/null
-time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rails test > /dev/null
-time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rails test > /dev/null
+time docker-compose -f compose.yml -f docker.build.yml run --rm rails bin/rake environment > /dev/null
+time docker-compose -f compose.yml -f docker.image.yml run --rm rails bin/rake environment > /dev/null
+time docker-compose -f compose.yml -f docker.build.yml run --rm rails bin/rails test > /dev/null
+time docker-compose -f compose.yml -f docker.image.yml run --rm rails bin/rails test > /dev/null
 ```
 
 ## Results

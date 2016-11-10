@@ -21,8 +21,8 @@ Run `docker info` and paste the output below:
 
 Run the following commands and paste the output:
 
-    time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rake environment > /dev/null
-    time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rake environment > /dev/null
-    time docker-compose -f docker-compose.yml -f docker-compose.build.yml run --rm rails bin/rails test > /dev/null
-    time docker-compose -f docker-compose.yml -f docker-compose.image.yml run --rm rails bin/rails test > /dev/null
+    time docker-compose -f compose.yml -f docker.build.yml run --rm rails bin/rake environment > /dev/null
+    time docker-compose -f compose.yml -f docker.image.yml run --rm rails bin/rake environment > /dev/null
+    time docker-compose -f compose.yml -f docker.build.yml run --rm rails bin/rails test > /dev/null
+    time docker-compose -f compose.yml -f docker.image.yml run --rm rails bin/rails test > /dev/null
 ```
